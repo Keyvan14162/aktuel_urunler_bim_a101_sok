@@ -9,7 +9,7 @@ class Constants {
   static const String a101BannerPageUrl =
       "https://www.cimri.com/brosur/a101-com-tr";
   static const String bimBannerPageUrl =
-      "https://www.bim.com.tr/Categories/680/afisler.aspx";
+      "https://www.cimri.com/brosur/bim-com-tr";
   static const String bizimBannerPageUrl =
       "https://www.cimri.com/brosur/bizimtoptan-com-tr";
 

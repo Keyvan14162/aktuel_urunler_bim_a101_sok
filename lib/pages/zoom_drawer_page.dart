@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:aktuel_urunler_bim_a101_sok/constants/constants.dart';
 import 'package:aktuel_urunler_bim_a101_sok/constants/enums.dart';
-import 'package:aktuel_urunler_bim_a101_sok/data/bim_client.dart';
 import 'package:aktuel_urunler_bim_a101_sok/data/kataloglar_client.dart';
 import 'package:aktuel_urunler_bim_a101_sok/models/store_model.dart';
 import 'package:aktuel_urunler_bim_a101_sok/pages/old/store_loading_page.dart';
@@ -106,7 +105,7 @@ class _ZoomDrawerScreenState extends State<ZoomDrawerScreen>
         Constants.bimLogoPath,
         "Bim",
         StoreCode.bim,
-        BimClient().getBannerData(),
+        KataloglarClient().getBannerData(Constants.bimBannerPageUrl),
         Constants.bimColor,
       ),
       StoreModel(

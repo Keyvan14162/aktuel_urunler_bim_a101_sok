@@ -1,6 +1,5 @@
 import 'package:aktuel_urunler_bim_a101_sok/constants/constants.dart';
 import 'package:aktuel_urunler_bim_a101_sok/constants/enums.dart';
-import 'package:aktuel_urunler_bim_a101_sok/data/bim_client.dart';
 import 'package:aktuel_urunler_bim_a101_sok/data/kataloglar_client.dart';
 import 'package:aktuel_urunler_bim_a101_sok/models/banner_model.dart';
 import 'package:aktuel_urunler_bim_a101_sok/pages/old/store_page_old.dart';
@@ -74,8 +73,8 @@ class StoreLoadingPage extends StatelessWidget {
               );
           break;
         case StoreCode.bim:
-          await BimClient()
-              .getBannerData()
+          await KataloglarClient()
+              .getBannerData(Constants.bimBannerPageUrl)
               .then(
                 (List<BannerModel> bannerModelsList) => expansionPanelList.add(
                   CustomExpansionPanel(

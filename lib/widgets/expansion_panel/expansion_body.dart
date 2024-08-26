@@ -1,7 +1,6 @@
 import 'package:aktuel_urunler_bim_a101_sok/constants/constants.dart';
 import 'package:aktuel_urunler_bim_a101_sok/constants/enums.dart';
 import 'package:aktuel_urunler_bim_a101_sok/constants/pages.dart';
-import 'package:aktuel_urunler_bim_a101_sok/data/bim_client.dart';
 import 'package:aktuel_urunler_bim_a101_sok/data/kataloglar_client.dart';
 import 'package:aktuel_urunler_bim_a101_sok/models/banner_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -33,17 +32,11 @@ class ExpansionBody extends StatelessWidget {
           itemCount: data.length,
           itemBuilder: (context, index) {
             Future brochurePageImagesFuture;
-            switch (storeCode) {
-              case StoreCode.bim:
-                brochurePageImagesFuture = brochurePageImagesFuture =
-                    BimClient().getBrochurePageImageUrls(index);
-                break;
-              default:
-                brochurePageImagesFuture =
-                    KataloglarClient().getBrochurePageImageUrls(
-                  data[index].bannerUrl.toString(),
-                );
-            }
+            brochurePageImagesFuture =
+                KataloglarClient().getBrochurePageImageUrls(
+              data[index].bannerUrl.toString(),
+            );
+
             return GestureDetector(
               onTap: () {
                 Navigator.of(context).pushNamed(Pages.gridPage, arguments: [
